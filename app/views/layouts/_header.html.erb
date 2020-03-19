@@ -12,14 +12,18 @@
               管理者 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Show", current_user %></li>
-              <li><%= link_to "Settings", '#' %></li>
+              <li class="dropdown-header">ユーザー</li>
+              <li><%= link_to "プロフィール", current_user %></li>
+              <li><%= link_to "設定", '#' %></li>
+              <li class="dropdown-header">タスク</li>
+              <li><%= link_to "タスク一覧", '#' %></li>
+              
               <li class="divider"></li>
-              <li><%= link_to "Log out", logout_path, method: :delete %></li>
+              <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "Log in", login_path, class: "header-list" %></li>
+          <li><%= link_to "ログイン", login_path, class: "header-list" %></li>
         <% end %>
       </ul>
     </nav>
