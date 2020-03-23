@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def new
     if logged_in? && !current_user.admin?
       flash[:info] = 'すでにログインしています。'
-      redirect_to current_user
+      redirect_to @user
     end
     @user = User.new
   end
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = '新規作成に成功しました。'
-      rediract_to @user
+      redirect_to @user
     else
       render :new
     end
